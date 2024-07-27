@@ -10,3 +10,7 @@
   </div>
 <% end %>
 </div>
+
+<% if @pagy.count > @pagy.limit %>
+<%== pagy_nav(@pagy) %>
+<% end %>

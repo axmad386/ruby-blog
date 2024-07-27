@@ -9,4 +9,8 @@
 #   end
 user = User.where(email: "user@mail.com").first_or_initialize
 user.update!(password: "password", password_confirmation: "password")
-user.save
+
+100.times do |i|
+  blog_post = BlogPost.where(title: "Blog Post #{i}").first_or_initialize
+  blog_post.update!(content: "Hello world", published_at: Time.current)
+end
